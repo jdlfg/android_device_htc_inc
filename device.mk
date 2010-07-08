@@ -9,6 +9,8 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 DEVICE_PACKAGE_OVERLAYS += device/htc/inc/overlay
 
 PRODUCT_PROPERTY_OVERRIDES += \
+	media.a1026.nsForVoiceRec=0 \
+	media.a1026.enableA1026=1 \
 	ro.com.android.wifi-watchlist=GoogleGuest \
 	ro.error.receiver.system.apps=com.google.android.feedback \
 	ro.setupwizard.enterprise_mode=1 \
@@ -41,6 +43,22 @@ PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
 	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
 	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+
+# media config xml file
+PRODUCT_COPY_FILES += \
+    device/htc/inc/media_profiles.xml:system/etc/media_profiles.xml
+
+PRODUCT_PACKAGES += \
+    librs_jni
+
+# we have enough storage space to hold precise GC data
+PRODUCT_TAGS += dalvik.gc.type-precise
+
+# Passion uses high-density artwork where available
+PRODUCT_LOCALES += hdpi
+
+PRODUCT_COPY_FILES += \
+    device/htc/inc/vold.fstab:system/etc/vold.fstab
 
 ifdef ($(USE_HTC_PROPRIETARIES),true)
 PRODUCT_COPY_FILES += \
@@ -217,3 +235,7 @@ PRODUCT_COPY_FILES += \
 	device/htc/inc/proprietary/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
 
 endif
+
+# stuff common to all HTC phones
+$(call inherit-product, device/htc/common/common.mk)
+
