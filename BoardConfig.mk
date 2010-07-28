@@ -38,6 +38,8 @@ BOARD_VENDOR_USE_AKMD := akm8973
 
 BOARD_EGL_CFG := device/htc/inc/egl.cfg
 
+BOARD_USE_HTC_USB_FUNCTION_SWITCH := true
+
 BOARD_BOOTIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00280000)
 BOARD_RECOVERYIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00500000)
 BOARD_SYSTEMIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x0f800000)
