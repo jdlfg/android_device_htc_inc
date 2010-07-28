@@ -5,7 +5,7 @@
 #
 
 # stuff common to all HTC phones
-$(call inherit-product, device/htc/common/common.mk)
+#$(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
