@@ -39,7 +39,7 @@ BOARD_VENDOR_USE_AKMD := akm8973
 BOARD_EGL_CFG := device/htc/inc/egl.cfg
 
 BOARD_BOOTIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00280000)
-BOARD_RECOVERYIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00480000)
+BOARD_RECOVERYIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00500000)
 BOARD_SYSTEMIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x0f800000)
 BOARD_USERDATAIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x09500000)
 # The size of a block that can be marked bad.
