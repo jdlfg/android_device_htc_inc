@@ -38,12 +38,13 @@ BOARD_VENDOR_USE_AKMD := akm8973
 
 BOARD_EGL_CFG := device/htc/inc/egl.cfg
 
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00280000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00480000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0f800000   # limited so we enforce room to grow
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x09500000
+BOARD_BOOTIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00280000)
+BOARD_RECOVERYIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00480000)
+BOARD_SYSTEMIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x0f800000)
+BOARD_USERDATAIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x09500000)
+# The size of a block that can be marked bad.
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-#TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
 USE_CAMERA_STUB := false
