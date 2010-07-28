@@ -4,14 +4,16 @@
 # properly on htc incredible hardware
 #
 
-# stuff common to all HTC phones
-$(call inherit-product, device/htc/common/common.mk)
-
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/inc/overlay
 
-PRODUCT_PROPERTY_OVERRIDES += 
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.build.changelist=263529 \
+	ro.product.ua= \
+	ro.build.project= \
+	ro.product.version=3.16.605.0 \
+	keyguard.no_require_sim=1 \
 	ro.com.google.clientidbase=android-verizon \
 	ro.com.google.gmsversion=2.2_r2 \
 	ro.com.google.clientidbase=ms-android-htc \
@@ -65,7 +67,8 @@ PRODUCT_PROPERTY_OVERRIDES +=
 	ro.media.enc.jpeg.quality=95,85,70 \
 	ro.setupwizard.enterprise_mode=1
 
-#PRODUCT_COPY_FILES += 
+PRODUCT_COPY_FILES += \
+	device/htc/inc/eeclist_for_mcc.conf:system/etc/ecclist_for_mcc.conf
 
 # media config xml file
 PRODUCT_COPY_FILES += \
