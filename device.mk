@@ -4,6 +4,9 @@
 # properly on htc incredible hardware
 #
 
+# stuff common to all HTC phones
+$(call inherit-product, device/htc/common/common.mk)
+
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/inc/overlay
@@ -37,18 +40,14 @@ endif
 
 # actually include the props
 $(foreach prop,$(USE_PROPRIETARIES), \
-  $(if $(wildcard device/motorola/sholes/proprietary.$(prop)), \
+  $(if $(wildcard device/htc/inc/proprietary.$(prop)), \
     $(eval \
 PRODUCT_COPY_FILES += $(shell \
-        cat device/motorola/sholes/proprietary.$(prop) \
-        | sed -r 's/^\/(.*\/)([^/ ]+)$$/device\/motorola\/sholes\/proprietary\/$
+        cat device/htc/inc/proprietary.$(prop) \
+        | sed -r 's/^\/(.*\/)([^/ ]+)$$/device\/htc\/inc\/proprietary\/\2:\1\2/' \
         | tr '\n' ' ') \
      ), \
-    $(error Cannot include proprietaries from $(prop). List file device/motorol$
+    $(error Cannot include proprietaries from $(prop). List file device/htc/inc/proprietary.$(prop) does not exist) \
    ) \
  )
 endif
-
-# stuff common to all HTC phones
-$(call inherit-product, device/htc/common/common.mk)
-
