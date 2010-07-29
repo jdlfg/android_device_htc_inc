@@ -68,7 +68,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.setupwizard.enterprise_mode=1
 
 PRODUCT_COPY_FILES += \
-	device/htc/inc/eeclist_for_mcc.conf:system/etc/ecclist_for_mcc.conf
+	device/htc/inc/ecclist_for_mcc.conf:system/etc/ecclist_for_mcc.conf
 
 # media config xml file
 PRODUCT_COPY_FILES += \
