@@ -22,11 +22,13 @@ function extract_file () {
 
     if [ "${from_loc}" == "adb" ] ; then
         echo "Extracting ${from_file} from adb..."
-        adb pull "${from_file}" "${to_loc}/"
+        mkdir -p "${to_loc}/$(dirname ${from_file})"
+        adb pull "${from_file}" "${to_loc}/${from_file}"
     else
         if [ -d "${from_loc}" ] ; then
             echo "Copying ${from_file} from ${from_loc}"
-            cp "${from_loc}/${from_file}" "${to_loc}/"
+            mkdir -p "${to_loc}/$(dirname ${from_file})"
+            cp "${from_loc}/${from_file}" "${to_loc}/${from_file}"
         else
             echo "${from_loc} is not a valid from location"
         fi
