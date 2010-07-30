@@ -10,8 +10,6 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/inc/overlay
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.build.changelist=263529 \
-	ro.product.ua= \
-	ro.build.project= \
 	ro.product.version=3.16.605.0 \
 	keyguard.no_require_sim=1 \
 	ro.com.google.clientidbase=android-verizon \
@@ -66,6 +64,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.media.dec.jpeg.memcap=20000000 \
 	ro.media.enc.jpeg.quality=95,85,70 \
 	ro.setupwizard.enterprise_mode=1
+# although these are in the leaked build.prop... no reason to set them as they're empty
+#	ro.product.ua= \
+#	ro.build.project= \
 
 PRODUCT_COPY_FILES += \
 	device/htc/inc/ecclist_for_mcc.conf:system/etc/ecclist_for_mcc.conf
