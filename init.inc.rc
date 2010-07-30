@@ -13,8 +13,8 @@ on init
     # START from umount/re-mount data
     #
     umount /data
-	devwait /dev/block/mmcblk0p1
-    mount yaffs2:ext3 sel?mtd@userdata:mmcblk0p1 /data nosuid noatime nodiratime
+    devwait /dev/block/mmcblk0p1
+    mount ext3 mmcblk0p1 /data nosuid noatime nodiratime
     exec /system/bin/e2fsck -p /dev/block/mmcblk0p1
     chown system system /data
     chmod 0771 /data
@@ -78,8 +78,8 @@ on init
     # END umount/re-mount data
     #
 	
-	echo 0 > /data/local/rights/mid.txt
-	chmod 0777 /data/local/rights/mid.txt
+    echo 0 > /data/local/rights/mid.txt
+    chmod 0777 /data/local/rights/mid.txt
 	
     mount yaffs2 mtd@datadata /data/data nosuid nodev
     chown system system /data/data
@@ -89,8 +89,8 @@ on init
     # START umount/re-mount cache
     #
     umount /cache
-	devwait /dev/block/mmcblk0p2
-    mount yaffs2:ext3 sel?mtd@cache:mmcblk0p2 /cache nosuid nodev noatime nodiratime
+    devwait /dev/block/mmcblk0p2
+    mount ext3 mmcblk0p2 /cache nosuid nodev noatime nodiratime
     chown system cache /cache
     chmod 0770 /cache
 
@@ -164,20 +164,20 @@ service btld /system/bin/logwrapper /system/bin/btld -lpm 1 -hb 3000000
 
 # for USB internet sharing
 service udhcpd /system/bin/udhcpd
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service netsharing_on /system/bin/netsharing net on
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service netsharing_off /system/bin/netsharing net off
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service netsharing_pass /system/bin/netsharing net_pass on
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service modem /system/xbin/wireless_modem
     user system
@@ -208,4 +208,3 @@ service dmagent /system/bin/dmagent -N -P19 -VSY
     socket dmagent stream 660 root radio
     user root
     group radio cache inet misc
-
