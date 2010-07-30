@@ -113,7 +113,7 @@ $(foreach prop,$(USE_PROPRIETARIES), \
     $(eval \
 PRODUCT_COPY_FILES += $(shell \
         cat device/htc/inc/proprietary.$(prop) \
-        | sed -r 's/^\/(.*\/)([^/ ]+)$$/device\/htc\/inc\/proprietary\/\1\2:\1\2/' \
+        | sed -r 's/^\/(.*\/)([^/ ]+)$$/device\/htc\/inc\/proprietary\/\2:\1\2/' \
         | tr '\n' ' ') \
      ), \
     $(error Cannot include proprietaries from $(prop). List file device/htc/inc/proprietary.$(prop) does not exist) \
