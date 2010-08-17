@@ -8,6 +8,7 @@
 /system/bin/chownThp
 /system/bin/debug_tool
 /system/bin/dmagent
+/system/bin/dumpcrash
 /system/bin/dumplayer
 /system/bin/e2fsck_recvy
 /system/bin/fbtool
@@ -26,6 +27,7 @@
 /system/bin/netsharing
 /system/bin/resize2fs_recvy
 /system/bin/ser2net
+/system/bin/setWiMAXPropDaemond
 /system/bin/shutdown
 /system/bin/snd8k
 /system/bin/sound8k
@@ -68,6 +70,8 @@
 /system/etc/vomeCore.cfg
 /system/etc/vomeplay.cfg
 /system/etc/wimax/dhcp/wimaxDhcp.conf
+/system/fonts/gcsh00d-hkscs.ttf
+/system/fonts/ucsh00d_c.ttf
 /system/lib/egl/libEGL_adreno200.so
 /system/lib/egl/libGLESv1_CM_adreno200.so
 /system/lib/egl/libGLESv2_adreno200.so
@@ -96,6 +100,7 @@
 /system/lib/libgsl.so
 /system/lib/libhdmi_sprintext.so
 /system/lib/libhtc_acoustic.so
+/system/lib/libhtc_ril.so
 /system/lib/libhtcbitmapfactory.so
 /system/lib/libicule.so
 /system/lib/libiculx.so
@@ -159,6 +164,7 @@
 /system/tts/lang_pico/it-IT_cm0_sg.bin
 /system/tts/lang_pico/it-IT_ta.bin
 /system/usr/keychars/incrediblec-keypad.kcm.bin
+/system/usr/keylayout/AVRCP.kl
 /system/usr/keylayout/h2w_headset.kl
 /system/usr/keylayout/incrediblec-keypad.kl
 /system/xbin/wireless_modem
