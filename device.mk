@@ -16,6 +16,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.gmsversion=2.2_r2 \
 	ro.com.google.clientidbase=ms-android-htc \
 	media.a1026.nsForVoiceRec=0 \
+	media.a1026.enableA1026=1 \
 	htc.audio.alt.enable=1 \
 	htc.audio.hac.enable=1 \
 	ro.media.enc.hprof.file.format=mp4 \
@@ -68,9 +69,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #	ro.product.ua= \
 #	ro.build.project= \
 
-PRODUCT_COPY_FILES += \
-	device/htc/inc/ecclist_for_mcc.conf:system/etc/ecclist_for_mcc.conf
-
 # media config xml file
 PRODUCT_COPY_FILES += \
         frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -86,10 +84,15 @@ PRODUCT_COPY_FILES += \
         frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
         packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
         frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-	device/htc/inc/media_profiles.xml:system/etc/media_profiles.xml
+	device/htc/inc/media_profiles.xml:system/etc/media_profiles.xml \
+	device/htc/inc/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
+	device/htc/inc/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
+	device/htc/inc/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
 
 PRODUCT_PACKAGES += \
-    librs_jni
+	sensors.inc \
+	lights.inc \
+	librs_jni
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -120,3 +123,6 @@ PRODUCT_COPY_FILES += $(shell \
    ) \
  )
 endif
+
+# inherit the HTC stuff
+$(call inherit-product, device/htc/common/common.mk)
