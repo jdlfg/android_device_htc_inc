@@ -90,8 +90,6 @@ PRODUCT_COPY_FILES += \
 	device/htc/inc/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
 
 PRODUCT_PACKAGES += \
-	sensors.inc \
-	lights.inc \
 	librs_jni
 
 # we have enough storage space to hold precise GC data
