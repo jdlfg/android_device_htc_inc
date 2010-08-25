@@ -120,6 +120,3 @@ PRODUCT_COPY_FILES += $(shell \
    ) \
  )
 endif
-
-# inherit the HTC stuff
-$(call inherit-product, device/htc/common/common.mk)
