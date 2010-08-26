@@ -147,10 +147,10 @@ service dhcpcd /system/bin/dhcpcd -ABKL eth0
     disabled
     oneshot
 
-#service hciattach /system/bin/brcm_patchram_plus --enable_hci --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
-#    user bluetooth
-#    group bluetooth net_bt_admin
-#    disabled
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
 
 # Make sure we startup btld before hcid
 # Set target address to emulator host loopback IF
