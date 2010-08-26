@@ -33,6 +33,8 @@ BOARD_USES_QCOM_LIBS := true
 
 BOARD_VENDOR_USE_AKMD := akm8973
 
+BOARD_GPS_LIBRARIES := libloc_api
+
 BOARD_EGL_CFG := device/htc/inc/egl.cfg
 
 BOARD_USE_HTC_USB_FUNCTION_SWITCH := true
