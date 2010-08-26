@@ -290,8 +290,5 @@
          it will be removed when the lower-level touch driver generates better
          data. -->
     <bool name="config_filterTouchEvents">false</bool>
-    
-    <!-- Use notification light instead of attention light -->
-    <bool name="config_hasIntrusiveLed">true</bool>
 
 </resources>
