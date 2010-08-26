@@ -9,11 +9,11 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 DEVICE_PACKAGE_OVERLAYS += device/htc/inc/overlay
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.build.changelist=263529 \
-	ro.product.version=3.16.605.0 \
+	ro.build.changelist=231334 \
+	ro.product.version=3.21.605.1 \
 	keyguard.no_require_sim=1 \
 	ro.com.google.clientidbase=android-verizon \
-	ro.com.google.gmsversion=2.2_r4 \
+	ro.com.google.gmsversion=2.2_r5 \
 	ro.com.google.clientidbase=ms-android-htc \
 	media.a1026.nsForVoiceRec=0 \
 	htc.audio.alt.enable=1 \

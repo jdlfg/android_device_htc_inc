@@ -7,7 +7,6 @@
 /system/bin/chownThp
 /system/bin/debug_tool
 /system/bin/dmagent
-/system/bin/dumpcrash
 /system/bin/dumplayer
 /system/bin/e2fsck_recvy
 /system/bin/fbtool
