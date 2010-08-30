@@ -61,7 +61,6 @@
 /system/etc/voVidDec.dat
 /system/etc/vo_omx_core.cfg
 /system/etc/voicemail-conf.xml
-/system/etc/vold.fstab
 /system/etc/vomeComp.cfg
 /system/etc/vomeCore.cfg
 /system/etc/vomeplay.cfg
