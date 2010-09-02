@@ -84,6 +84,7 @@ PRODUCT_COPY_FILES += \
         packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
         frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	device/htc/inc/media_profiles.xml:system/etc/media_profiles.xml \
+	device/htc/inc/vold.fstab:system/etc/vold.fstab \
 	device/htc/inc/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
 	device/htc/inc/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
 	device/htc/inc/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
