@@ -33,7 +33,7 @@ BOARD_USES_QCOM_LIBS := true
 
 BOARD_VENDOR_USE_AKMD := akm8973
 
-BOARD_GPS_LIBRARIES := libgps
+BOARD_GPS_LIBRARIES := libgps librpc
 
 BOARD_EGL_CFG := device/htc/inc/egl.cfg
 
